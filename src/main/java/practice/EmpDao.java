@@ -15,4 +15,8 @@ public class EmpDao implements EmpInterface{
 		
 	}
 
+	public int update(Employee employee) {
+		return template.update("UPDATE employee SET ");
+	}
+
 }

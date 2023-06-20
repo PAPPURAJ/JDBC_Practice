@@ -10,7 +10,6 @@ public class Main {
 		EmpInterface empInt=context.getBean("empBean",EmpInterface.class);
 		
 		System.out.println(empInt.insert(new Employee("Shayeri", "Doctor")));
-		
 
 	}
 
