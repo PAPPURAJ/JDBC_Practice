@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    ">
+ 
+	<bean class="io.github.pappuraj.JDBCPractice.Project2Morrow" name="dev">
+		<property name="name" value="Keya"/>
+		<property name="position" value="Engineer"/>
+		<property name="fieldOfWork" value="Flutter"/>
+		<property name="salary" value="100000"/>
+	</bean>    
+ 
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">
+		<property name="driverClassName" value="com.mysql.jabc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/p2m"/>
+		<property name="username" value="root"/>
+		<property name="password" value="...."/>
+		
+	</bean>    
+ 
+	<bean class="org.springframework.jdbc.core.JdbcTemplate" name="myJDBC">
+		<property name="dataSource">
+			<ref bean="ds"/>
+		</property>
+	</bean>    
+
+    <context:annotation-config />
+</beans>
+ 
