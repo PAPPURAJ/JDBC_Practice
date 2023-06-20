@@ -10,7 +10,7 @@
     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
     ">
  
-	<bean class="io.github.pappuraj.JDBCPractice.Project2Morrow" name="dev">
+	<bean class="io.github.pappuraj.JDBCPractice.entities.Project2Morrow" name="dev">
 		<property name="name" value="Keya"/>
 		<property name="position" value="Engineer"/>
 		<property name="fieldOfWork" value="Flutter"/>
@@ -29,7 +29,11 @@
 		<property name="dataSource">
 			<ref bean="ds"/>
 		</property>
-	</bean>    
+	</bean>   
+	
+	<bean class="io.github.pappuraj.JDBCPractice.dao.EngineersDao" name="engDao">
+		<property name="jdbcTemplate" ref="myJDBC"/>
+	</bean> 
 
     <context:annotation-config />
 </beans>

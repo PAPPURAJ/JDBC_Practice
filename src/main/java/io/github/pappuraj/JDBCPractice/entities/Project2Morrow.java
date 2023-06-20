@@ -1,4 +1,4 @@
-package io.github.pappuraj.JDBCPractice;
+package io.github.pappuraj.JDBCPractice.entities;
 
 public class Project2Morrow {
 	private String name;
