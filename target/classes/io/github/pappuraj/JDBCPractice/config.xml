@@ -18,7 +18,7 @@
 	</bean>    
  
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">
-		<property name="driverClassName" value="com.mysql.jabc.Driver"/>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/p2m"/>
 		<property name="username" value="root"/>
 		<property name="password" value="...."/>
