@@ -11,6 +11,7 @@ public class Main {
 		ApplicationContext context=new ClassPathXmlApplicationContext("io/github/pappuraj/Config.xml");
 		
 		RoboticShopDao roboticProduct=context.getBean("myJDBC",RoboticShopDao.class);
+		MyConsoleApplication.start();
 		
 
 	}
