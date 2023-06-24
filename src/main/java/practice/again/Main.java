@@ -10,7 +10,10 @@ public class Main {
 		ApplicationContext context=new ClassPathXmlApplicationContext("practice/again/Config.xml");
 
 		StudentDao studentDao=context.getBean("myTmp",StudentDao.class);
-		System.out.println(studentDao.write(new Student("Keya","Raozan")));
+		//System.out.println(studentDao.write(new Student("Keya","Raozan")));
+		//System.out.println(studentDao. updateAddress(new Student("Keya","Boalkhali")));
+		//System.out.println(studentDao. delete(new Student("Keya","Boalkhali")));
+		System.out.println(studentDao.select("Keya"));
 		
 	}
 
