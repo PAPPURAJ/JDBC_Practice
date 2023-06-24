@@ -4,6 +4,6 @@
 
 
 Welcome to my awesome project! Here's a video showcasing its features:
+[![Play Video](https://img.youtube.com/vi/Ao0KNKOaaSI/0.jpg)](https://www.youtube.com/watch?v=Ao0KNKOaaSI)
 
-[![Watch the video]([https://img.youtube.com/vi/Ao0KNKOaaSI/0.jpg](https://img.youtube.com/vi/Ao0KNKOaaSI/0.jpg))](https://youtu.be/Ao0KNKOaaSI)
-[![Watch the video]([[https://img.youtube.com/vi/Ao0KNKOaaSI/0.jpg](https://img.youtube.com/vi/Ao0KNKOaaSI/0.jpg)](https://img.youtube.com/vi/Ao0KNKOaaSI/0.jpg))](https://youtu.be/Ao0KNKOaaSI)
+Click on the image above to play the video.
