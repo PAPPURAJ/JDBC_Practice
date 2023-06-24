@@ -9,7 +9,7 @@
 
 
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="drv">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/roboticshop"/>
 		<property name="username" value="root"/>
 		<property name="password" value="...."/>

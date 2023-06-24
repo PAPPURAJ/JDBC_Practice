@@ -5,12 +5,12 @@ public class RoboticProduct {
 	private String name;
 	private String model;
 	private String category;
-	private String price;
+	private double price;
 	
 	public RoboticProduct() {
 		super();
 	}
-	public RoboticProduct(int id, String name, String model, String category, String price) {
+	public RoboticProduct(int id, String name, String model, String category, double price) {
 		super();
 		Id = id;
 		this.name = name;
@@ -18,6 +18,14 @@ public class RoboticProduct {
 		this.category = category;
 		this.price = price;
 	}
+	public RoboticProduct(String name, String model, String category, double price) {
+		super();
+		this.name = name;
+		this.model = model;
+		this.category = category;
+		this.price = price;
+	}
+
 	public int getId() {
 		return Id;
 	}
@@ -42,10 +50,10 @@ public class RoboticProduct {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	

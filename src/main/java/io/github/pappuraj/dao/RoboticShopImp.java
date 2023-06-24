@@ -10,12 +10,12 @@ import io.github.pappuraj.model.RoboticProduct;
 public class RoboticShopImp implements RoboticShopDao{
 	
 	JdbcTemplate myJDBCtemp;
+	private String tableName="Product";
 	
 	
 	
 	public RoboticShopImp() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
@@ -40,18 +40,19 @@ public class RoboticShopImp implements RoboticShopDao{
 
 
 	public int insertProduct(RoboticProduct product) {
-
-		return 0;
+		return myJDBCtemp.update("INSERT INTO "+tableName+"(name,model,category,price) values (?,?,?,?)",product.getName(),product.getModel(),product.getCategory(),product.getPrice());
+	}
+	
+	public List<RoboticProduct> viewAllProduct() {
+		return myJDBCtemp.query("SELECT * from "+tableName,new MyRowMapper());
 	}
 
 	public int updateProduct(RoboticProduct product) {
-		// TODO Auto-generated method stub
-		return 0;
+		return myJDBCtemp.update("UPDATE "+tableName+" SET name=?, model=?, category=?, price=? WHERE Id=?",product.getName(),product.getModel(),product.getCategory(),product.getPrice(),product.getId());
 	}
 
 	public int deleteProduct(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return myJDBCtemp.update("DELETE FROM "+tableName+" WHERE Id=?",id);
 	}
 
 	public RoboticProduct serarchById(int id) {

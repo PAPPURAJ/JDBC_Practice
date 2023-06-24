@@ -6,6 +6,7 @@ import io.github.pappuraj.model.RoboticProduct;
 
 public interface RoboticShopDao {
 	int insertProduct(RoboticProduct product);
+	List<RoboticProduct> viewAllProduct();
 	int updateProduct(RoboticProduct product);
 	int deleteProduct(int id); 
 	RoboticProduct serarchById(int id);
