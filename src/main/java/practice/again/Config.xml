@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+
+	<!-- Testing -->
+	<bean class="practice.again.Student" name="student1">
+		<constructor-arg value="Pappuraj"/>
+		<constructor-arg value="Chittagong"/>
+	</bean>
+	
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="drv">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/bittech"/>
+		<property name="username" value="root"/>
+		<property name="password" value="...."/>
+	</bean>
+	
+
+	
+	
+	<bean class="org.springframework.jdbc.core.JdbcTemplate" name="myjdbc">
+		<property name="dataSource">
+			<ref bean="drv"/>
+		</property>
+	</bean>
+	
+	
+	<bean class="practice.again.JDBCtemp" name="myTmp">
+		<property name="jdbcTemplate">
+			<ref bean="myjdbc"/>
+		</property>
+
+	</bean>
+
+</beans>
