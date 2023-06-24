@@ -7,5 +7,7 @@ public interface StudentDao {
 	int updateAddress(Student student);
 	int delete(Student student);
 	Student select(String name);
+	List<Student> selectAll();
+	List<Student> selectAll(String name);
 
 }

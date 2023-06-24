@@ -1,13 +1,12 @@
 package practice.again;
-
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 public class JDBCtemp implements StudentDao{
 
+	
 	private JdbcTemplate jdbcTemplate;
 	
 	
@@ -62,6 +61,18 @@ public class JDBCtemp implements StudentDao{
 		RowMapper<Student> rm=new MyRowMapper();
 		
 		return jdbcTemplate.queryForObject("SELECT * FROM empdetails WHERE name=?", rm, name);
+	}
+
+
+
+	public List<Student> selectAll() {
+		
+		return jdbcTemplate.query("SELECT * FROM empdetails", new MyRowMapper());
+	}
+	
+	public List<Student> selectAll(String name) {
+		
+		return jdbcTemplate.query("SELECT * FROM empdetails WHERE name=?", new MyRowMapper(),name);
 	}
 
 	
