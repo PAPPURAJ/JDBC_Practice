@@ -102,23 +102,52 @@ public class MyConsoleApplication {
 				break;
 				
 			case 5:
+				prl("Searching a new product...\n");
 				
+				pr("Enter ID: ");
+				in=sc.readLine();
+				System.out.println(dao.searchById(Integer.parseInt(in)));
 				break;
 				
 			case 6:
+				prl("Searching a new product...\n");
 				
+				pr("Enter model: ");
+				in=sc.readLine();
+				System.out.println(dao.searchByModel(in));
 				break;
 				
 			case 7:
+				prl("Searching a new product...\n");
 				
+				pr("Enter name: ");
+				in=sc.readLine();
+				products=dao.searchByname(in);
+				prl("\n\nList of "+products.size()+" products are:\n");
+				for(RoboticProduct rp:products) System.out.println(rp);
 				break;
 				
 			case 8:
+				prl("Searching a new product...\n");
 				
+				pr("Enter category: ");
+				in=sc.readLine();
+				products=dao.searchByCategory(in);
+				prl("\n\nList of "+products.size()+" products are:\n");
+				for(RoboticProduct rp:products) System.out.println(rp);
 				break;
 				
 			case 9:
+				prl("Searching a new product...\n");
 				
+				pr("Enter starting price: ");
+				in=sc.readLine();
+				double d=Double.parseDouble(in);
+				pr("Enter ending price: ");
+				in=sc.readLine();
+				products=dao.searchByPriceRange(d,Double.parseDouble(in));
+				prl("\n\nList of "+products.size()+" products are:\n");
+				for(RoboticProduct rp:products) System.out.println(rp);
 				break;
 				
 			case 0:

@@ -55,29 +55,24 @@ public class RoboticShopImp implements RoboticShopDao{
 		return myJDBCtemp.update("DELETE FROM "+tableName+" WHERE Id=?",id);
 	}
 
-	public RoboticProduct serarchById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public RoboticProduct searchById(int id) {
+		return myJDBCtemp.queryForObject("SELECT * from "+tableName+" WHERE Id=?", new MyRowMapper(),id);
 	}
 
-	public RoboticProduct serarchByModel(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public RoboticProduct searchByModel(String model) {
+		return myJDBCtemp.queryForObject("SELECT * from "+tableName+" WHERE model=?", new MyRowMapper(),model);
 	}
 
 	public List<RoboticProduct> searchByname(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return myJDBCtemp.query("SELECT * from "+tableName+ " WHERE name=?",new MyRowMapper(),name);
 	}
 
 	public List<RoboticProduct> searchByCategory(String category) {
-		// TODO Auto-generated method stub
-		return null;
+		return myJDBCtemp.query("SELECT * from "+tableName+ " WHERE category=?",new MyRowMapper(),category);
 	}
 
 	public List<RoboticProduct> searchByPriceRange(double starting, double ending) {
-		// TODO Auto-generated method stub
-		return null;
+		return myJDBCtemp.query("SELECT * from "+tableName+ " WHERE price BETWEEN ? AND ?",new MyRowMapper(),starting,ending);
 	}
 
 }
